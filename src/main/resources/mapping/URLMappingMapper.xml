@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.trs.dao.URLMappingDao">
+    <resultMap id="BaseResultMap" type="com.trs.model.URLMapping">
+        <result column="id" property="id" />
+        <result column="longURL" property="longURL" />
+    </resultMap>
+    <select id="getURLById" resultType="com.trs.model.URLMapping" parameterType="long" >
+        SELECT longURL FROM URLMapping WHERE id = #{id};
+    </select>
+    <select id="getIdByURL" resultType="com.trs.model.URLMapping" parameterType="String">
+        SELECT id FROM URLMapping WHERE longURL = #{longURL};
+    </select>
+    <insert id="addURLMapping" useGeneratedKeys="true" keyProperty="id" parameterType="com.trs.model.URLMapping">
+        INSERT INTO  URLMapping(longURL) VALUES (#{longURL});
+    </insert>
+</mapper>
