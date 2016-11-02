@@ -10,22 +10,19 @@
 <html>
 <head>
     <title>拓尔思短网址</title>
-    <script type="text/javascript">
-        function copy(){
-            var e=document.getElementById("shortURL");//对象是content
-            e.select(); //选择对象
-            document.execCommand("Copy"); //执行浏览器复制命令
-            alert("已复制好，可贴粘。");
-        }
-    </script>
+    <script type="text/javascript" src="../../resources/js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="../../resources/js/index.js"></script>
 </head>
 <body>
 <form id="form" action="/shortURL/save" method="post">
     <div id="urlDiv">
     <input id="longURL" type="text" name="longURL"/>
+        <input type="button" value="判断是否可访问" onclick="getURL()"/>
     <input id="button" type="submit" value="生成短网址"/>
     </div>
 </form>
+<div id="msg1"></div>
+<div id="msg"></div>
 <c:if  test="${!empty shortURL}">
     <label id="shortURL">${shortURL}</label>
     <input type="button" value="复制" onclick="copy()">
