@@ -10,7 +10,7 @@ jQuery(document).ready(function ($) {
             cache: false,
             dataType: "jsonp", //跨域采用jsonp方式
             processData: false,
-            timeout:10000, //超时时间，毫秒
+            timeout:4000, //超时时间，毫秒
             complete: function (data) {
                 if (data.status==200) {
                     $('#form').submit();

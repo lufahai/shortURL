@@ -5,6 +5,7 @@ html{
     background: -moz-radial-gradient(54% 20%, closest-corner,#57BEE1,#10629F);
     background: -webkit-radial-gradient(54% 20%, closest-corner,#57BEE1,#10629F);
     background: -o-radial-gradient(54% 20%, closest-corner,#57BEE1,#10629F);
+    background: -ms-radial-gradient(54% 20%, closest-corner,#57BEE1,#10629F);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#57BEE1', endColorstr='#10629',GradientType=1 );
 }
 .main{
