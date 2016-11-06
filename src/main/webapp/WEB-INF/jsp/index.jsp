@@ -12,20 +12,20 @@
 <head>
     <title>拓尔思短网址</title>
     <!--[if IE]>
-    <link rel="stylesheet" type="text/css" href="../../resources/css/ie8.css" />
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/css/ie8.css" />
     <![endif]-->
-    <link rel="stylesheet" href="../../resources/css/shorturl.css" type="text/css"/>
-    <link rel="stylesheet" type="text/css" href="../../resources/css/index.css">
-    <script type="text/javascript" src="../../resources/js/jquery-1.7.2.min.js"></script>
-    <script type="text/javascript" src="../../resources/js/index.js"></script>
+    <link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/shorturl.css" type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/resources/css/index.css">
+    <script type="text/javascript" src="<%=request.getContextPath() %>/resources/js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="<%=request.getContextPath() %>/resources/js/index.js"></script>
 </head>
 <body>
 <div class="main">
 <div class="img-logo">
-    <img src="../../resources/image/trslogo.png">
+    <img src="<%=request.getContextPath() %>/resources/image/trslogo.png">
     <div class="top-div">短网址生成器</div>
 </div>
-<form id="form" action="/shortURL.html" method="post">
+<form id="form" action="<%=request.getContextPath() %>/shortURL.html" method="post">
     <div id="urlDiv">
         <input id="longURL" type="text" name="longURL"/>
         <input id="button" class="input-url" type="button" value="生成短网址"/>

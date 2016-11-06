@@ -9,8 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
-import javax.ws.rs.DefaultValue;
-import javax.ws.rs.QueryParam;
+import javax.servlet.http.HttpServletRequest;
 import java.io.UnsupportedEncodingException;
 
 
@@ -29,7 +28,7 @@ public class ConvertController {
     }
 
     @RequestMapping(value = "/shortURL.html")
-    public ModelAndView save(String longURL) throws UnsupportedEncodingException {
+    public ModelAndView save(HttpServletRequest request, String longURL) throws UnsupportedEncodingException {
         if ("".equals(longURL) || longURL == null){
             return new ModelAndView("index");
         }
@@ -43,10 +42,10 @@ public class ConvertController {
         Hashids hashids = new Hashids();
         long id = urlMappingService.getIdByURL(url);
         if (id > 0){
-            return new ModelAndView("index", "shortURL", "http://localhost:8080/" + hashids.encode(id));
+            return new ModelAndView("index", "shortURL", request.getScheme()+"://"+request.getServerName() + "/" + hashids.encode(id));
         }else {
             long newId = urlMappingService.addURLMapping(url);
-            return new ModelAndView("index", "shortURL", "http://localhost:8080/" + hashids.encode(newId));
+            return new ModelAndView("index", "shortURL", request.getScheme()+"://"+request.getServerName()+ "/" + hashids.encode(newId));
         }
     }
 
