@@ -28,7 +28,7 @@ public class ConvertController {
         return "index";
     }
 
-    @RequestMapping(value = "/save")
+    @RequestMapping(value = "/shortURL.html")
     public ModelAndView save(String longURL) throws UnsupportedEncodingException {
         if ("".equals(longURL) || longURL == null){
             return new ModelAndView("index");

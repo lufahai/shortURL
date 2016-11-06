@@ -25,7 +25,7 @@
     <img src="../../resources/image/trslogo.png">
     <div class="top-div">短网址生成器</div>
 </div>
-<form id="form" action="/save" method="post">
+<form id="form" action="/shortURL.html" method="post">
     <div id="urlDiv">
         <input id="longURL" type="text" name="longURL"/>
         <input id="button" class="input-url" type="button" value="生成短网址"/>
